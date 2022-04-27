@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+<head>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet"> -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+</style>
+{%block body%}
+
+<body>
+    <br><br><br><br>
+    <h1 style="margin-left: 30%; padding: 6px; color:#7D1128; font-family: 'Poppins', sans-serif;"> Download Your Video Here!!! </h1>
+    <br>
+    <form method="POST" action="{{url_for('youtube_playlist_download')}}">
+        <input name="searchbar" class="searchbar" placeholder="Enter your url here"
+            style="width:500px; border: 4px solid #e5989b; border-radius: 6px; height: 40px;margin-left:30%; padding: 6px; ">
+        <button type="search" style="border: 4px solid #7D1128; color:#7D1128; background-color:#bcd8c1; border-radius: 6px; height: 40px;" class="btn btn-light" onclick="funct()">Download Playlist</button>
+    </form>
+    <br><br><br><br>
+    <div style="margin-left: 30%;">
+        <h3 style="width: 50%; 
+        text-align: center; 
+        border-bottom: 1px solid #000; 
+        line-height: 0.1em;
+        margin: 10px 0 20px;"><span style="background:#e5989b; padding:0 10px;">OR</span></h3>
+    </div>
+    <br><br><br><br>
+    <div style="display: inline; padding: 10px; ">
+    <a style="color:#7D1128;" href="{{url_for('facebook')}}"><i id="facebook" class="fa fa-facebook" style="font-size:50px; margin-left: 25%;"></i></a>
+    <!-- <a style="color:#7D1128;"href="{{url_for('instagram')}}"><i class="fa fa-instagram" style="font-size:50px; margin-left: 20%;"></i></a> -->
+    <a style="color:#7D1128;" href="{{url_for('youtube')}}"><i class="fa fa-youtube" style="font-size:50px; margin-left: 40%;"></i></a>
+    </div>
+</body>
+{%endblock body %}

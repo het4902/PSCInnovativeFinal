@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
+<br><br><br><br>
+<h3 style="text-align: center;">Facebook Downloader</h3>
+<!--
+    <form method="POST" action="{{url_for('facebook_download')}}">
+    <input type="text" class="form-control" placeholder="Enter video url here" name="url">
+    <input type="submit" value="Download Video">
+</form>
+-->
+<center>
+<i id="facebook" class="fa fa-facebook" style="font-size:100px;"></i>
+<br>
+<br>
+<form method="POST" action="{{url_for('facebook_download')}}">
+    <input name="url" class="searchbar" placeholder="Enter your url here"
+        style="width:500px; border: 4px solid black; border-radius: 6px; height: 40px;">
+        <br>
+        <br>
+    <button type="submit" style=" border-radius: 6px; height: 40px;" class="btn btn-primary">Download</button>
+</form>
+</center>
+{% endblock body%}

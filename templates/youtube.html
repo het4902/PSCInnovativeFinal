@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{%block body%}
+    <body style="background-color: #daa520">
+    <br>
+    <br>
+    <br>
+    <br>
+    <center>
+    <div>
+        <p><h1>Download .mp4 and .mp3 files here!</h1></p>
+    </div>
+    <br>
+    <br>
+    <i id="youtube" class="fa fa-youtube" style="font-size:100px;"></i>
+    <div >
+       
+    </div>
+    <br><br><br>
+    <form method='POST'>
+    <!-- <input type="text" placeholder="Enter the URL" name="youtube_link" style="border: 4px solid black; border-radius: 6px; width: 20%;"> -->
+    <center>
+    <input name="youtube_link" class="searchbar" placeholder="Enter your url here" 
+    
+            style="width:500px; height:40px;border: 4px solid #e5989b;"></center>
+            <br>
+        
+    <button type="submit"  class="btn btn-success">Download</button>
+    </center>
+</form>
+</body>
+{%endblock body %}

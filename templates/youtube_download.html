@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{%block body%}
+
+<body style="background-color: #daa520">
+    <center>
+        <br>
+        <br>
+        <br>
+        <p>The title of the video is:</p>
+        <h3>{{url.title}}</h3>
+        <hr>
+        <br>
+        <div>
+            <img src="{{url.thumbnail_url}}" alt="Thumbnail not available for the video" height="360" width="640" style="border: 4px dashed #7D1128;;">
+        </div>
+        <hr>
+        <br>
+        <div>
+            <form method="POST" action="{{url_for('youtube_video_download')}}">
+                <select name="itag" style="font-family: Arial; font-size: 20px" class="btn btn-success dropdown-toggle dropdown-toggle-split">
+                    {% for i in url.streams.filter(progressive=True) %}
+                    <option value="{{i.itag}}">{{i.resolution}}</option>
+                    {% endfor %}
+                </select>
+                <input type="submit" value="Download Video" class="btn btn-danger"
+                    style="font-family: Arial; font-size: 20px; border: solid 2px #7D1128;; border-radius: 4px;">
+            </form>
+            <br>
+            <div style="margin-left:10px; margin-right:auto;">
+                <form method="POST" action="{{url_for('youtube_mp3_download')}}">
+                    <input type="submit" value="Download mp3" class="btn btn-danger"
+                        style="font-family: Arial; font-size: 20px; border: solid 2px #7D1128;; border-radius: 4px;">
+                </form>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </center>
+</body>
+{%endblock body %}
